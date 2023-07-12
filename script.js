@@ -2,9 +2,48 @@
 function generateQuiz(questions, quizContainer, resultsContainer, submitButton){
 
 	function showQuestions(questions, quizContainer){
-	}
-
-	function showResults(questions, quizContainer, resultsContainer){
+		var myQuestions = [
+			{
+				questions: "Which on of these is NOT a way to use CSS in a webpage?",
+				answers: {
+					a: 'inline',
+					b: 'external',
+					c: 'outline',
+					d: 'internal',
+				},
+				correctAnswer: 'c'
+			},
+			{
+				questions: "Which element contains information that helps the browser to render the page correctly?",
+				answers: {
+					a: '<h>',
+					b: '<title>',
+					c: '<p>',
+					d: '<link>',
+				},
+				correctAnswer: 'a'
+			},
+			{
+				questions: "What does DOM stand for?",
+				answers: {
+					a: 'Download Object Model',
+					b: 'Document Obtuse Media',
+					c: 'Document Object Model',
+					d: 'Download object Media',
+				},
+				correctAnswer: 'c'
+			},
+			{
+				questions: "What is the purpose of APIs?",
+				answers: {
+					a: 'to connect user to their respositories',
+					b: 'to interact with components of a web browser',
+					c: 'to handle user interaction',
+					d: 'to help define functions',
+				}, 
+				correctAnswer: 'b'
+			},
+		]
 	}
 
 	showQuestions(questions, quizContainer);
@@ -12,49 +51,8 @@ function generateQuiz(questions, quizContainer, resultsContainer, submitButton){
 	submitButton.onclick = function(){
 		showResults(questions, quizContainer, resultsContainer);
 	}
-}
-var myQuestions = [
-	{
-		question: "Which on of these is NOT a way to use CSS in a webpage?",
-		answers: {
-			a: 'inline',
-			b: 'external',
-			c: 'outline',
-			d: 'internal',
-		},
-		correctAnswer: 'c'
-	},
-	{
-		question: "Which element contains information that helps the browser to render the page correctly?",
-		answers: {
-			a: '<h>',
-			b: '<title>',
-			c: '<p>',
-			d: '<link>',
-		},
-		correctAnswer: 'a'
-	},
-	{
-		question: "What does DOM stand for?",
-		answers: {
-			a: 'Download Object Model',
-			b: 'Document Obtuse Media',
-			c: 'Document Object Model',
-			d: 'Download object Media',
-		},
-		correctAnswer: 'c'
-	},
-	{
-		question: "What is the purpose of APIs?",
-		answers: {
-			a: 'to connect user to their respositories',
-			b: 'to interact with components of a web browser',
-			c: 'to handle user interaction',
-			d: 'to help define functions',
-		}, 
-		correctAnswer: 'b'
-	},
-];
+};
+
 function showQuestions(questions, quizContainer){
 	var output = [];
 	var answers;
@@ -103,7 +101,7 @@ function showResults(questions, quizContainer, resultsContainer){
 			numCorrect++;
 			answerContainers[i].style.color = 'lightgreen';
 		} else{
-			answerContainers[i].style.color = 'red';
+			answerContainers[i].style.color = 'darkred';
 		}
 	}
 
@@ -124,7 +122,7 @@ var timerEl = document.getElementById('countdown');
 var mainEl = document.getElementById('main');
 
 function countdown() {
-  var timeLeft = 60;
+  var timeLeft = 30;
 
   var timeInterval = setInterval(function () {
 
