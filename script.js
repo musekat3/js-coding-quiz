@@ -2,7 +2,7 @@
 function generateQuiz(questions, quizContainer, resultsContainer, submitButton){
 
 	function showQuestions(questions, quizContainer){
-		var myQuestions = [
+		var questions = [
 			{
 				questions: "Which on of these is NOT a way to use CSS in a webpage?",
 				answers: {
@@ -48,6 +48,8 @@ function generateQuiz(questions, quizContainer, resultsContainer, submitButton){
 
 	showQuestions(questions, quizContainer);
 
+	var submitButton = document.getElementById('submit');
+
 	submitButton.onclick = function(){
 		showResults(questions, quizContainer, resultsContainer);
 	}
@@ -79,7 +81,8 @@ function showQuestions(questions, quizContainer){
 		);
 	}
 
-	
+	var quizContainer = document.getElementById('quiz');
+
 	quizContainer.innerHTML = output.join('');
 }
 showQuestions(questions, quizContainer);
@@ -105,6 +108,7 @@ function showResults(questions, quizContainer, resultsContainer){
 		}
 	}
 
+	var resultsContainer = document.getElementById('results');
 
 	resultsContainer.innerHTML = numCorrect + ' out of ' + questions.length;
 }
@@ -116,7 +120,7 @@ var quizContainer = document.getElementById('quiz');
 var resultsContainer = document.getElementById('results');
 var submitButton = document.getElementById('submit');
 
-generateQuiz(myQuestions, quizContainer, resultsContainer, submitButton);
+generateQuiz(questions, quizContainer, resultsContainer, submitButton);
 
 var timerEl = document.getElementById('countdown');
 var mainEl = document.getElementById('main');
